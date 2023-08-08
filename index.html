@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 20px;
+            background-image: url(img/desenho-de-paisagem-bonita-paisagem_18591-19801.avif);
+            background-size: 100% 100%;
+            background-position: center center;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+        }
+
+        .container{
+            width: 70%;
+            height: 70vh;
+            border-radius: 5px;
+            background-color: transparent;
+            backdrop-filter: blur(1vh);
+            box-shadow: .1px .1px 10px black;
+            padding: 5px;;
+            display: grid;
+            justify-content: center;
+            align-items: center;
+        }
+
+        input, button{
+            border-radius: 5px;
+            border: none;
+            padding: 5px;
+            font-size: 1em;
+            outline: none;
+        }
+
+        .borboleta{
+            width: 50px;
+            position: relative;
+            z-index: -1;
+            left: 0;
+            bottom: 30px;
+        }
+        img{
+            width: 100%;
+            border-radius: 100%;
+
+        }
+
+        .img{
+            animation: slide 10s linear infinite;
+            width: 100px;
+            height: 100px;
+            position: fixed;
+            z-index: -1;
+            border-radius: 50%;
+            transform: rotate(0deg);
+
+        }
+
+        @keyframes slide {
+            0% {
+                left: 0;
+                top: 10%;
+                transform: rotatex(-10deg);
+            }
+
+            50%{
+                top: 10%;
+                transform: rotatex(-50deg);
+            }
+            
+            
+            100%{
+                left:  100% ;
+                top: 10%;
+                transform: rotatex(-10deg);
+            }
+        }
+
+        @media (min-width: 600px){
+            .container{
+                width: 70vh;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Festa VIP</h1>
+        <h2>Bem vindo a festa senhor(a)</h2>
+        <input type="text" name="nome" id="nome" placeholder="Digite seu nome...">
+        <h2>Você foi convidado por quem?</h2>
+        <div>
+            <input type="text" id="convidado" placeholder="Nome de quem convidou">
+            <button id="verificar">Verificar entrada</button>
+        </div>
+        <h2>Verificando...</h2>
+        <p id="resultado"></p>
+    </div>
+    <div class="img">
+        <img src="img/flying-birds-silhouettes-pattern-wallpaper-transparent-isolated-bird-flying-tattoo-design-template-for-card-package-and-wallpaper-png.webp" alt="">
+    </div>
+    <div class="borboleta">
+        <img src="img/f7cf60685837e52454b0736104045b89.gif" alt="">
+    </div>
+
+</body>
+<script src="index.js"></script>
+</html>
